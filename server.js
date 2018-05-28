@@ -23,7 +23,7 @@ app.get("/", function (request, response) {
 app.post('/file', upload.single('thisFile'), function(req,res) {
   var size = req.file.size;
   console.log(size);
-  res.send(size)
+  res.json({ 'name': req.file.originalname, 'type':req.file.mimetype, 'size': size });
 })
 
 
