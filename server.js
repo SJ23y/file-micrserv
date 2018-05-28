@@ -5,6 +5,7 @@
 var express = require('express');
 var app = express();
 var multer = require('multer');
+var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
 // we've started you off with Express, 
@@ -18,6 +19,11 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+
+app.post('/file', upload.single(), function(req,res,next) {
+  var size = req.file.size;
+  res.send(size);
+})
 
 
 // listen for requests :)
