@@ -20,9 +20,10 @@ app.get("/", function (request, response) {
 });
 
 
-app.post('/file', upload.single(), function(req,res,next) {
+app.post('/file', upload.single('thisFile'), function(req,res) {
   var size = req.file.size;
-  res.send(size);
+  console.log(size);
+  res.send(size)
 })
 
 

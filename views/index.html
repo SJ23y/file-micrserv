@@ -22,8 +22,8 @@
   </head>
   <body>
     <p>Submit a file to view its filesize.</p>
-    <form method="POST" action="file-micrserv.glitch.me/file">
-      <input type="file">      
+    <form method="POST" action="/file" enctype="multipart/form-data">
+      <input type="file" name="thisFile">      
       <button type="submit">Send file</button>
     </form>
   </body>
