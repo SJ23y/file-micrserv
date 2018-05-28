@@ -4,6 +4,8 @@
 // init project
 var express = require('express');
 var app = express();
+var multer = require('multer');
+var upload = multer({ storage: storage });
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -15,6 +17,8 @@ app.use(express.static('public'));
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
+
+
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
